@@ -1,0 +1,22 @@
+def find_min_max(arr):
+    if not arr:
+        raise ValueError("Массив пуст. Невозможно найти минимальное и максимальное значения.")
+
+    min_val = arr[0]
+    max_val = arr[0]
+
+    for num in arr:
+        if num < min_val:
+            min_val = num
+        if num > max_val:
+            max_val = num
+
+    return min_val, max_val
+
+try:
+    arr = [3, 5, 1, 9, -2, 7]
+    result = find_min_max(arr)
+    print("Минимальное значение:", result[0])
+    print("Максимальное значение:", result[1])
+except ValueError as e:
+    print(e)
