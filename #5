@@ -1,0 +1,13 @@
+def convert_to_12_hour_format(hours, minutes):
+    period = "AM" if hours < 12 else "PM"
+
+    hours_12_format = hours % 12
+
+    if hours_12_format == 0:
+        hours_12_format = 12
+
+    time_string = f"{hours_12_format}:{minutes:02d} {period}"
+    return time_string
+
+print(convert_to_12_hour_format(14, 30))
+print(convert_to_12_hour_format(0, 45)) 
